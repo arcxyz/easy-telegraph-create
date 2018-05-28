@@ -6,7 +6,7 @@ const PORT = 3000
 const app = express()
 
 const errorHandler = (error, req, res, next) => {
-    console.log(error.stack)
+    console.error(error.stack)
     res.status(error.status || 500)
     res.json({
         error: true,
@@ -36,8 +36,6 @@ app.post('/createPage', async (req, res, next) =>  {
     } catch (error) {
         next(error)
     }
-    
-    
 })
 
 app.use(errorHandler)
