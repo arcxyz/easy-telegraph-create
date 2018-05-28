@@ -1,0 +1,21 @@
+{
+  "name": "easy-telegraph-create",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "jsdom": "^11.11.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
+    "sinon": "^5.0.10",
+    "supertest": "^3.1.0"
+  }
+}
