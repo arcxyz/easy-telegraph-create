@@ -17,7 +17,7 @@ const errorHandler = (error, req, res, next) => {
 app.use(express.json())
 
 app.post('/createPage', async (req, res, next) =>  {
-    let { access_token, title, author_name, content} = req.body
+    const { access_token, title, author_name, content} = req.body
     if(!access_token || !title || !content) {
         const error = new Error('Missing params')
         error.status = 500
@@ -28,7 +28,7 @@ app.post('/createPage', async (req, res, next) =>  {
             access_token,
             title,
             author_name,
-            content: getNodeFromContent(req.body.content)
+            content: getNodeFromContent(content)
         }
     
         const contentResponse = await createTelegraphPage(pageObject)
